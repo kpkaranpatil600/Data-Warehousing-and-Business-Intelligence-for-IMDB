@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="258" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([Engine.WorkflowFileName], 20)" field="DI_JobID" size="1073741823" type="V_WString" />
+            <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+            <FormulaField expression="IF [region] =&quot;\N&quot; THEN &#xA;Null() ELSE [region] ENDIF" field="region" size="254" type="V_WString" />
+            <FormulaField expression="IF [language] =&quot;\N&quot; THEN &#xA;Null() ELSE [language] ENDIF" field="language" size="254" type="V_WString" />
+            <FormulaField expression="IF [types] =&quot;\N&quot; THEN &#xA;Null() ELSE [types] ENDIF" field="types" size="254" type="V_WString" />
+            <FormulaField expression="IF [attributes] =&quot;\N&quot; THEN &#xA;Null() ELSE [attributes] ENDIF" field="attributes" size="254" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DI_JobID = Right([Engine.WorkflowFileName], 20)
+DI_CreateDate = DateTimeNow()
+re...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="414" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="titleId" selected="True" />
+            <SelectField field="ordering" selected="True" />
+            <SelectField field="title" selected="True" />
+            <SelectField field="region" selected="True" />
+            <SelectField field="language" selected="True" />
+            <SelectField field="types" selected="True" />
+            <SelectField field="attributes" selected="True" />
+            <SelectField field="isOriginalTitle" selected="True" />
+            <SelectField field="DI_JobID" selected="True" />
+            <SelectField field="DI_CreateDate" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="738" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||stg_imdb_title_akas</File>
+          <Passwords>4DB29EDF18D7927C9357EE3D30B54B2E26C58B033D57D6C9E8C7AA11E9A1C9A39AFBC</Passwords>
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="titleId" Dest="titleid" />
+                <Field Source="ordering" Dest="ordering" />
+                <Field Source="title" Dest="title" />
+                <Field Source="region" Dest="region" />
+                <Field Source="language" Dest="language" />
+                <Field Source="types" Dest="types" />
+                <Field Source="attributes" Dest="attributes" />
+                <Field Source="isOriginalTitle" Dest="isoriginaltitle" />
+                <Field Source="DI_JobID" Dest="di_jobid" />
+                <Field Source="DI_CreateDate" Dest="di_create_dt" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Append</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Query=stg_imdb_title_akas</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>False</IgnoreQuotes>
+            <Delimeter>\t</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>65001</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>title_akas.tsv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="titleId" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="ordering" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="title" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="region" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="language" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="types" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="attributes" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="isOriginalTitle" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="570" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="titleId" selected="True" />
+            <Field field="ordering" selected="True" />
+            <Field field="title" selected="True" />
+            <Field field="region" selected="True" />
+            <Field field="language" selected="True" />
+            <Field field="types" selected="True" />
+            <Field field="attributes" selected="True" />
+            <Field field="isOriginalTitle" selected="True" />
+            <Field field="DI_JobID" selected="True" />
+            <Field field="*Unknown" selected="False" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="titleId" size="10" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="String" />
+            <Field name="ordering" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="Byte" />
+            <Field name="title" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="V_WString" />
+            <Field name="region" size="4" source="Formula: IF [region] =&quot;\N&quot; THEN &#xA;Null() ELSE [region] ENDIF" type="String" />
+            <Field name="language" size="3" source="Formula: IF [language] =&quot;\N&quot; THEN &#xA;Null() ELSE [language] ENDIF" type="String" />
+            <Field name="types" size="20" source="Formula: IF [types] =&quot;\N&quot; THEN &#xA;Null() ELSE [types] ENDIF" type="V_String" />
+            <Field name="attributes" size="62" source="Formula: IF [attributes] =&quot;\N&quot; THEN &#xA;Null() ELSE [attributes] ENDIF" type="V_String" />
+            <Field name="isOriginalTitle" size="2" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_akas.tsv" type="String" />
+            <Field name="DI_JobID" size="15" source="Formula: Right([Engine.WorkflowFileName], 20)" type="String" />
+            <Field name="DI_CreateDate" source="Formula: DateTimeNow()" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>stg_imdb_title_akas</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="789f6b29-489b-4d5b-b82e-4bc90ab669dd" />
+      <Telemetry>
+        <PreviousWorkflowId value="8874dd77-3149-474d-941f-2e928c641a81" />
+        <OriginWorkflowId value="7c9dbc2d-31cd-453d-916e-46c321141cea" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

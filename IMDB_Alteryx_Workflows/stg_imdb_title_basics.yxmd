@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="222" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([Engine.WorkflowFileName], 20)" field="DI_JobID" size="1073741823" type="V_WString" />
+            <FormulaField expression="IF [startYear] ='\N'&#xA; THEN Null() &#xA;ELSE [startYear] ENDIF" field="startyear_char" size="1073741823" type="V_WString" />
+            <FormulaField expression="IF [endYear] = '\N'&#xA; THEN Null() &#xA;ELSE [endYear] ENDIF" field="endyear_char" size="1073741823" type="V_WString" />
+            <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+            <FormulaField expression="IF [startYear] = '\N' THEN &#xA;Null() ELSE [startYear] ENDIF" field="startYear" size="254" type="V_WString" />
+            <FormulaField expression="IF [endYear] = '\N' THEN &#xA;Null() ELSE [endYear] ENDIF" field="endYear" size="254" type="V_WString" />
+            <FormulaField expression="IF [runtimeMinutes] = '\N' &#xA; THEN Null()&#xA;else [runtimeMinutes] &#xA;Endif" field="runtimeMinutes" size="254" type="V_WString" />
+            <FormulaField expression="IF [runtimeMinutes] = '\N' &#xA; THEN Null()&#xA;else [runtimeMinutes]&#xA;endif" field="runtimeMinutes_char" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DI_JobID = Right([Engine.WorkflowFileName], 20)
+startyear_char = IF [startYear] ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="378" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="tconst" selected="True" />
+            <SelectField field="titleType" selected="True" />
+            <SelectField field="primaryTitle" selected="True" size="5000" />
+            <SelectField field="originalTitle" selected="True" size="5000" />
+            <SelectField field="isAdult" selected="True" />
+            <SelectField field="startYear" selected="True" />
+            <SelectField field="endYear" selected="True" />
+            <SelectField field="runtimeMinutes" selected="True" />
+            <SelectField field="genres" selected="True" />
+            <SelectField field="DI_JobID" selected="True" />
+            <SelectField field="startyear_char" selected="True" />
+            <SelectField field="endyear_char" selected="True" />
+            <SelectField field="DI_CreateDate" selected="True" />
+            <SelectField field="runtimeMinutes_char" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="750" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||stg_imdb_title_basics</File>
+          <Passwords>4DB29EDF18D7927C9357EE3D30B54B2E26C58B033D57D6C9E8C7AA11E9A1C9A39AFBC</Passwords>
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="tconst" Dest="tconst" />
+                <Field Source="titleType" Dest="titletype" />
+                <Field Source="primaryTitle" Dest="primarytitle" />
+                <Field Source="originalTitle" Dest="originaltitle" />
+                <Field Source="isAdult" Dest="isadult" />
+                <Field Source="startYear" Dest="startyear" />
+                <Field Source="endYear" Dest="endyear" />
+                <Field Source="runtimeMinutes" Dest="runtimeminutes" />
+                <Field Source="genres" Dest="genres" />
+                <Field Source="DI_JobID" Dest="di_jobid" />
+                <Field Source="startyear_char" Dest="startyear_char" />
+                <Field Source="endyear_char" Dest="endyear_char" />
+                <Field Source="DI_CreateDate" Dest="di_create_dt" />
+                <Field Source="runtimeMinutes_char" Dest="runtimeminutes_char" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Append</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Query=stg_imdb_title_basics</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>False</IgnoreQuotes>
+            <Delimeter>\t</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>65001</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>title_basics.tsv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="tconst" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="titleType" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="primaryTitle" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="originalTitle" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="isAdult" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="startYear" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="endYear" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="runtimeMinutes" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="genres" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="558" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="tconst" selected="True" />
+            <Field field="titleType" selected="True" />
+            <Field field="primaryTitle" selected="True" />
+            <Field field="originalTitle" selected="True" />
+            <Field field="isAdult" selected="True" />
+            <Field field="startYear" selected="True" />
+            <Field field="endYear" selected="True" />
+            <Field field="runtimeMinutes" selected="True" />
+            <Field field="genres" selected="True" />
+            <Field field="DI_JobID" selected="True" />
+            <Field field="startyear_char" selected="True" />
+            <Field field="endyear_char" selected="True" />
+            <Field field="runtimeMinutes_char" selected="True" />
+            <Field field="*Unknown" selected="False" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="tconst" size="10" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="String" />
+            <Field name="titleType" size="12" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="String" />
+            <Field name="primaryTitle" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_WString" />
+            <Field name="originalTitle" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_String" />
+            <Field name="isAdult" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="Byte" />
+            <Field name="startYear" source="Formula: IF [startYear] = '\N' THEN &#xA;Null() ELSE [startYear] ENDIF" type="Int16" />
+            <Field name="endYear" source="Formula: IF [endYear] = '\N' THEN &#xA;Null() ELSE [endYear] ENDIF" type="Int16" />
+            <Field name="runtimeMinutes" source="Formula: IF [runtimeMinutes] = '\N' &#xA; THEN Null()&#xA;else [runtimeMinutes] &#xA;Endif" type="Int32" />
+            <Field name="genres" size="32" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_basics.tsv" type="V_String" />
+            <Field name="DI_JobID" size="20" source="Formula: Right([Engine.WorkflowFileName], 20)" type="String" />
+            <Field name="startyear_char" source="Formula: IF [startYear] ='\N'&#xA; THEN Null() &#xA;ELSE [startYear] ENDIF" type="Int16" />
+            <Field name="endyear_char" source="Formula: IF [endYear] = '\N'&#xA; THEN Null() &#xA;ELSE [endYear] ENDIF" type="Int16" />
+            <Field name="DI_CreateDate" source="Formula: DateTimeNow()" type="DateTime" />
+            <Field name="runtimeMinutes_char" source="Formula: IF [runtimeMinutes] = '\N' &#xA; THEN Null()&#xA;else [runtimeMinutes]&#xA;endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>stg_imdb_title_basics</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="9ad8db78-263d-4222-9ae6-399fe27a52c6" />
+      <Telemetry>
+        <PreviousWorkflowId value="95aa14f1-3a51-4e16-a47a-210d9040aa74" />
+        <OriginWorkflowId value="7c9dbc2d-31cd-453d-916e-46c321141cea" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

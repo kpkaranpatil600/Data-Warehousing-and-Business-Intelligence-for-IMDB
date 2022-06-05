@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="222" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([Engine.WorkflowFileName], 20)" field="DI_JobID" size="1073741823" type="V_WString" />
+            <FormulaField expression="IF [seasonNumber] ='\N'&#xA; THEN Null() &#xA;ELSE [seasonNumber] ENDIF" field="seasonNumber_char" size="1073741823" type="V_WString" />
+            <FormulaField expression="IF [episodeNumber] = '\N'&#xA; THEN Null() &#xA;ELSE [episodeNumber] ENDIF" field="episodeNumber_char" size="1073741823" type="V_WString" />
+            <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+            <FormulaField expression="IF [seasonNumber] = '\N' &#xA; THEN Null()&#xA;else [seasonNumber]&#xA;Endif" field="seasonNumber" size="254" type="V_WString" />
+            <FormulaField expression="IF [episodeNumber] = '\N' &#xA; THEN Null()&#xA;else [episodeNumber]&#xA;endif" field="episodeNumber" size="254" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DI_JobID = Right([Engine.WorkflowFileName], 20)
+seasonNumber_char = IF [seasonNu...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="390" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="tconst" selected="True" />
+            <SelectField field="parentTconst" selected="True" />
+            <SelectField field="seasonNumber" selected="True" />
+            <SelectField field="episodeNumber" selected="True" />
+            <SelectField field="DI_JobID" selected="True" />
+            <SelectField field="seasonNumber_char" selected="True" />
+            <SelectField field="episodeNumber_char" selected="True" />
+            <SelectField field="DI_CreateDate" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="666" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||stg_imdb_title_episode</File>
+          <Passwords>4DB29EDF18D7927C9357EE3D30B54B2E26C58B033D57D6C9E8C7AA11E9A1C9A39AFBC</Passwords>
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="tconst" Dest="tconst" />
+                <Field Source="parentTconst" Dest="parenttconst" />
+                <Field Source="seasonNumber" Dest="seasonnumber" />
+                <Field Source="episodeNumber" Dest="episodenumber" />
+                <Field Source="DI_JobID" Dest="di_jobid" />
+                <Field Source="seasonNumber_char" Dest="seasonnumber_char" />
+                <Field Source="episodeNumber_char" Dest="episodenumber_char" />
+                <Field Source="DI_CreateDate" Dest="di_create_dt" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Append</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Query=stg_imdb_title_episode</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_epsiode.tsv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>False</IgnoreQuotes>
+            <Delimeter>\t</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>65001</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>title_epsiode.tsv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="tconst" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_epsiode.tsv" type="V_WString" />
+            <Field name="parentTconst" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_epsiode.tsv" type="V_WString" />
+            <Field name="seasonNumber" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_epsiode.tsv" type="V_WString" />
+            <Field name="episodeNumber" size="254" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_epsiode.tsv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="534" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="tconst" selected="True" />
+            <Field field="parentTconst" selected="True" />
+            <Field field="seasonNumber" selected="True" />
+            <Field field="episodeNumber" selected="True" />
+            <Field field="DI_JobID" selected="True" />
+            <Field field="seasonNumber_char" selected="True" />
+            <Field field="episodeNumber_char" selected="True" />
+            <Field field="*Unknown" selected="False" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="tconst" size="10" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_epsiode.tsv" type="String" />
+            <Field name="parentTconst" size="10" source="File: E:\Spring 2022\DWBI\Project IMDB\OneDrive_2022-04-23\Project - imdb\data_imdb_datasets\imdb_tsv_files\title_epsiode.tsv" type="String" />
+            <Field name="seasonNumber" source="Formula: IF [seasonNumber] = '\N' &#xA; THEN Null()&#xA;else [seasonNumber]&#xA;Endif" type="Int16" />
+            <Field name="episodeNumber" source="Formula: IF [episodeNumber] = '\N' &#xA; THEN Null()&#xA;else [episodeNumber]&#xA;endif" type="Int32" />
+            <Field name="DI_JobID" size="18" source="Formula: Right([Engine.WorkflowFileName], 20)" type="String" />
+            <Field name="seasonNumber_char" source="Formula: IF [seasonNumber] ='\N'&#xA; THEN Null() &#xA;ELSE [seasonNumber] ENDIF" type="Int16" />
+            <Field name="episodeNumber_char" source="Formula: IF [episodeNumber] = '\N'&#xA; THEN Null() &#xA;ELSE [episodeNumber] ENDIF" type="Int32" />
+            <Field name="DI_CreateDate" source="Formula: DateTimeNow()" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>stg_imdb_title_episode</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="b7f9a974-ea7b-4575-9062-0d459db81f82" />
+      <Telemetry>
+        <PreviousWorkflowId value="af41ca24-799b-4d0f-9290-83780f0c3119" />
+        <OriginWorkflowId value="7c9dbc2d-31cd-453d-916e-46c321141cea" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
