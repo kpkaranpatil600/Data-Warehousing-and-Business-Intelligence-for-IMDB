@@ -18,8 +18,26 @@ Talend, Alteryx, SQL Server, MySQL, PostreSQL, PowerBI, Tableau, ER Studio
 ```
 > **Instructor:** Rick Sherman
 
-> **Reference Book:** Business Intelligence Guidebook: From Data Integration to Analytics
+> **Reference Book:** Business Intelligence Guidebook: From Data Integration to Analytics 
 
+<br/><br/>
+### **Talend Jobs:**
+![](2022-06-05-17-22-41.png)
+![](2022-06-05-17-23-21.png)
+![](2022-06-05-17-23-30.png)
+![](2022-06-05-17-23-37.png)
+![](2022-06-05-17-23-46.png)
+<br/><br/>
+### **IMDB_Staging - SQL Server:**
+![](2022-06-05-17-27-10.png)
+### **IMDB_Integration - SQL Server:**
+![](2022-06-05-17-30-43.png)
+### **IMDB_BI_Movies - SQL Server:**
+![](2022-06-05-17-31-40.png)
+### **IMDB_BI_People - PostgreSQL:**
+![](2022-06-05-17-32-14.png)
+### **IMDB_BI_TV - MySQL:**
+![](2022-06-05-17-32-43.png)
 <br/><br/>
 ### **Alteryx Workflows:**
 ![](2022-06-05-10-20-42.png)
@@ -35,5 +53,5 @@ Talend, Alteryx, SQL Server, MySQL, PostreSQL, PowerBI, Tableau, ER Studio
 ![](2022-06-05-10-45-20.png)
 ![](2022-06-05-10-46-24.png)
 <br/><br/>
-### **IMDB_RowCount_PostgreSQL:**
+### **IMDB_PostgreSQL:**
 ![](2022-06-05-10-51-15.png)
