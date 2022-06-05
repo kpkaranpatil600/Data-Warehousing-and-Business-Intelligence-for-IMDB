@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="894" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||stg_imdb_name_basics_primaryprofession</File>
+          <Passwords>4DB29EDF18D7927C9357EE3D30B54B2E26C58B033D57D6C9E8C7AA11E9A1C9A39AFBC</Passwords>
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize />
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="nconst" Dest="nconst" />
+                <Field Source="primaryprofession" Dest="primaryprofession" />
+                <Field Source="di_jobid" Dest="di_jobid" />
+                <Field Source="di_create_dt" Dest="di_create_dt" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>True</TransactionMessages>
+            <OutputOption>Append</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Query=stg_imdb_name_basics_primary...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>4DB29EDF18D7927C9357EE3D30B54B2E26C58B033D57D6C9E8C7AA11E9A1C9A39AFBC</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||select imdb_project."public".stg_imdb_name_basics.nconst,
+	imdb_project."public".stg_imdb_name_basics.primaryprofession,
+	imdb_project."public".stg_imdb_name_basics.di_jobid,
+	imdb_project."public".stg_imdb_name_basics.di_create_dt 
+from imdb_project."public".stg_imdb_name_basics</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Query=select imdb_project."public"...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="nconst" size="10" source="File: odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||select imdb_project.&quot;public&quot;.stg_imdb_name_basics.nconst,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.primaryprofession,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_jobid,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_create_dt &#xA;from imdb_project.&quot;public&quot;.stg_imdb_name_basics" type="V_String" />
+            <Field name="primaryprofession" size="255" source="File: odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||select imdb_project.&quot;public&quot;.stg_imdb_name_basics.nconst,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.primaryprofession,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_jobid,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_create_dt &#xA;from imdb_project.&quot;public&quot;.stg_imdb_name_basics" type="V_String" />
+            <Field name="di_jobid" size="20" source="File: odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||select imdb_project.&quot;public&quot;.stg_imdb_name_basics.nconst,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.primaryprofession,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_jobid,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_create_dt &#xA;from imdb_project.&quot;public&quot;.stg_imdb_name_basics" type="V_String" />
+            <Field name="di_create_dt" source="File: odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||select imdb_project.&quot;public&quot;.stg_imdb_name_basics.nconst,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.primaryprofession,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_jobid,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_create_dt &#xA;from imdb_project.&quot;public&quot;.stg_imdb_name_basics" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="498" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([Engine.WorkflowFileName], 20)&#xA;" field="DI_JobID" size="20" type="V_String" />
+            <FormulaField expression="DateTimeNow()" field="DI_Create_DT" size="19" type="DateTime" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[DI_JobID = Right([Engine.WorkflowFileName], 20)
+
+DI_Create_DT = DateTimeNow()
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="174" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="nconst" selected="True" />
+            <SelectField field="primaryName" selected="False" />
+            <SelectField field="birthYear" selected="False" />
+            <SelectField field="deathYear" selected="False" />
+            <SelectField field="knownForTitles" selected="False" />
+            <SelectField field="primaryprofession" selected="True" />
+            <SelectField field="di_jobid" selected="True" />
+            <SelectField field="di_create_dt" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="378" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>primaryprofession</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-04-24 18:55:43</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2022-04-24 18:55:43</StartDate>
+              <EndDate>2022-04-24 18:55:43</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([primaryprofession])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="270" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>primaryprofession</Field>
+          <Delimeters value="," />
+          <NumFields value="1" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="642" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="nconst" selected="True" />
+            <SelectField field="primaryprofession" selected="True" />
+            <SelectField field="di_jobid" selected="True" />
+            <SelectField field="di_create_dt" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="762" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="nconst" selected="True" />
+            <Field field="primaryprofession" selected="True" />
+            <Field field="di_jobid" selected="True" />
+            <Field field="*Unknown" selected="False" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="nconst" size="10" source="File: odbc:DSN=PostgreSQL30;UID=postgres;PWD=__EncPwd1__|||select imdb_project.&quot;public&quot;.stg_imdb_name_basics.nconst,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.primaryprofession,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_jobid,&#xA;	imdb_project.&quot;public&quot;.stg_imdb_name_basics.di_create_dt &#xA;from imdb_project.&quot;public&quot;.stg_imdb_name_basics" type="String" />
+            <Field description="TextToColumns: Parsed from primaryprofession" name="primaryprofession" size="25" source="TextToColumns: Parsed from primaryprofession" type="V_String" />
+            <Field name="di_jobid" size="20" source="Formula: Right([Engine.WorkflowFileName], 20)&#xA;" type="String" />
+            <Field name="di_create_dt" source="Formula: DateTimeNow()" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="False" max="8192" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>stg_imdb_name_basics_primaryprofession</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="6ea9fbf3-3369-45bf-9e10-dd72a849e546" />
+      <Telemetry>
+        <PreviousWorkflowId value="1b8d0c4d-a163-46b9-858c-e9ffea03d303" />
+        <OriginWorkflowId value="1b8d0c4d-a163-46b9-858c-e9ffea03d303" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
