@@ -1,0 +1,17 @@
+truncate table [imdb].[dbo].[stg_box_office_worldwide]
+truncate table stg_box_office_worldwide_reject
+truncate table stg_imdb_brands_gross
+truncate table stg_imdb_brands_list
+truncate table stg_imdb_franchises_gross
+truncate table stg_imdb_franchises_list
+truncate table stg_imdb_name_basics
+truncate table stg_imdb_title_akas
+truncate table stg_imdb_title_basics
+truncate table stg_imdb_title_crew
+truncate table stg_imdb_title_episode
+truncate table stg_imdb_title_principals
+truncate table stg_imdb_title_ratings
+truncate table stg_imdb_titleType
+truncate table stg_numbers_daily_box_office
+truncate table stg_numbers_frachise_all_box_office
+truncate table stg_numbers_frachise_movies_box_office

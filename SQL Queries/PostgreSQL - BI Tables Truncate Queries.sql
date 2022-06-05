@@ -1,0 +1,16 @@
+truncate table public.bi_list_brg_titles_names;
+truncate table public.bi_list_names;
+truncate table public.bi_list_titles;
+truncate table public.dim_imdb_genres;
+truncate table public.dim_imdb_job_category;
+truncate table public.dim_imdb_title_principals;
+truncate table public.dim_imdb_name_basics;
+truncate table public.dim_imdb_name_basics_knownfortitles;
+truncate table public.dim_imdb_name_basics_primaryprofession;
+truncate table public.dim_imdb_primaryprofession;
+truncate table public.dim_imdb_title_basics;
+truncate table public.dim_imdb_title_basics_genres;
+truncate table public.dim_imdb_title_crew_directors;
+truncate table public.dim_imdb_title_crew_writers;
+truncate table public.dim_imdb_title_episode;
+truncate table public.fct_imdb_title_ratings;
