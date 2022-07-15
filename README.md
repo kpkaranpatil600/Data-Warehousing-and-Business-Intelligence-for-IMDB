@@ -1,16 +1,18 @@
 # IMDB_Database_Warehousing_and_Business_Intelligence
-### **Description:**
-* Adopted Star &amp; Snowflake schemas to design an Enterprise Data Warehouse (EDW) by dimensional data modeling.
-* Performed data profiling &amp; cleansing using Alteryx to address data quality gaps &amp; inconsistency.
-* Applied data integration by ETL creation using Alteryx &amp; Talend for migrating data from ERP system to EDW.
-* Designed visualization reports &amp; built interactive dashboards on PowerBI &amp; Tableau for analyzing the data to draw better insights for business questions.
+## Objective:
+The aim of the project is to analyse the movies data from multiple sources such as IMDB MoviesLens, The Numbers and BoxOffice Mojo.com based on movies/cast/box office revenues, movie brands and franchises and perform ETL processes using Talend &amp; Alteryx.
 
-### **The key topic areas are:**
+## Description:
+* Designed Multi Star schema with 10 Fact &amp; 33 Dimension tables &amp; developed Data Integration Pipeline by ETL workflow to load all tables (380M+ rows) from   multiple sources such as CSV, MySQL, MSSQL &amp; PostgreSQL by using Talend
+* Implemented Data Profiling, Error Handling, Load Statistics, Cleansing and Performance Tuning to address data quality gaps &amp; maintained referential integrity using Alteryx &amp; Talend
+* Executed SQL scripts &amp; created interactive visualization dashboards on PowerBI &amp; Tableau for analyzing the data to draw better insights on sales &amp; customer segmentation
+
+## The key topic areas are:
 * Data Architecture
 * Dimensional Data Modeling
 * Data Integration &amp; ETL (Extract, Transform &amp; Load)
 * Data Engineering &amp; Data Preparation
-* BI &amp; Data Analytics Design
+* Business Intelligence &amp; Data Analytics Design
 
 ```
 Tools Used:
@@ -20,6 +22,30 @@ Talend, Alteryx, SQL Server, MySQL, PostreSQL, PowerBI, Tableau, ER Studio
 
 > **Reference Book:** Business Intelligence Guidebook: From Data Integration to Analytics 
 
+
+## Dataset Links:
+https://datasets.imdbws.com/
+
+https://www.boxofficemojo.com/franchise/?ref_=bo_nb_fr_secondarytab
+
+https://www.boxofficemojo.com/brand/?ref_=bo_nb_frs_secondarytab
+
+https://grouplens.org/datasets/movielens/25m/
+
+https://www.the-numbers.com/movies/franchises
+
+https://www.the-numbers.com/movies/franchise/Marvel-Cinematic-Universe#tab=summary
+
+https://www.the-numbers.com/movie/Avengers-The-(2012)#tab=box-office
+
+## References:
+https://elearning.tableau.com/
+
+https://help.talend.com/reader/KxVIhxtXBBFymmkkWJ~O4Q/8RlpZdAdKhP0IaMHXRV7yw
+
+https://www.talend.com/
+
+https://grouplens.org/datasets/movielens/
 <br/><br/>
 ### **Talend Jobs:**
 ![](2022-06-05-17-22-41.png)
