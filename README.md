@@ -83,7 +83,7 @@ https://grouplens.org/datasets/movielens/
 ### **IMDB_PostgreSQL:**
 ![](IMDB_%202022-07-18-01-38-55.png)
 
-### **IMDB - BI Movies (PowerBI Visualization):**
+### **IMDB - BI Movies:**
 •	Worldwide Lifetime Gross based on Running Minutes
 
 ![](IMDB_%202022-07-18-03-23-58.png)
@@ -111,3 +111,11 @@ https://grouplens.org/datasets/movielens/
 •	People Involved with Movies
 
 ![](IMDB_%202022-07-18-03-30-26.png)
+
+•	Movies Gross
+
+![](IMDB_%202022-07-18-04-16-24.png)
+
+•	Movies Selected Info
+
+![](IMDB_%202022-07-18-04-19-20.png)
