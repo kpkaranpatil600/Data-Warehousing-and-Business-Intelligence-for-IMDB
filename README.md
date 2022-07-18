@@ -82,3 +82,32 @@ https://grouplens.org/datasets/movielens/
 <br/><br/>
 ### **IMDB_PostgreSQL:**
 ![](IMDB_%202022-07-18-01-38-55.png)
+
+### **IMDB - BI Movies (PowerBI Visualization):**
+•	Worldwide Lifetime Gross based on Running Minutes
+
+![](IMDB_%202022-07-18-03-23-58.png)
+
+•	Top 100 Movies by Genre, Rating & Running Time
+
+![](IMDB_%202022-07-18-03-14-49.png)
+
+•	Top 25 Movies Based on Domestic and Foreign Revenue
+
+![](IMDB_%202022-07-18-03-16-03.png)
+
+•	Top 25 Movies based on Number of Votes and Title Type
+
+![](IMDB_%202022-07-18-03-16-34.png)
+
+•	Average Rating by Genre and Years
+
+![](IMDB_%202022-07-18-03-17-13.png)
+
+•	Top 25 Title based on IMDb rating and Title Type
+
+![](IMDB_%202022-07-18-03-24-46.png)
+
+•	People Involved with Movies
+
+![](IMDB_%202022-07-18-03-30-26.png)
