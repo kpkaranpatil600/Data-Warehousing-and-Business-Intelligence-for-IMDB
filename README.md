@@ -119,3 +119,30 @@ https://grouplens.org/datasets/movielens/
 •	Movies Selected Info
 
 ![](IMDB_%202022-07-18-04-19-20.png)
+
+### **IMDB - BI TV:**
+
+•	100 Popular TV SHows based on User Votes
+
+![](IMDB_%202022-07-18-05-10-57.png)
+
+•	People Detail with TV
+
+![](IMDB_%202022-07-18-05-12-37.png)
+
+•	TV Titles based on Title Type and Avg Rating
+
+![](IMDB_%202022-07-18-05-13-23.png)
+
+•	Ratings per Year
+
+![](IMDB_%202022-07-18-05-14-22.png)
+
+•	Top 25 TV Title based on Rating and Title Type
+
+![](IMDB_%202022-07-18-05-15-14.png)
+
+•	TV Series With Episode Number and Season Number
+
+![](IMDB_%202022-07-18-05-15-48.png)
+
