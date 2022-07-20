@@ -146,3 +146,20 @@ https://grouplens.org/datasets/movielens/
 
 ![](IMDB_%202022-07-18-05-15-48.png)
 
+### **IMDB - BI People:**
+
+•	People Overview
+
+![](IMDB_%202022-07-19-20-54-11.png)
+
+•	Title Overview
+
+![](IMDB_%202022-07-19-20-54-44.png)
+
+•	Title and People
+
+![](IMDB_%202022-07-19-20-55-08.png)
+
+•	Director Overview
+
+![](IMDB_%202022-07-19-20-55-45.png)
